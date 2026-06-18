@@ -26,10 +26,10 @@ const labels = {
 };
 
 const adjustments = {
-  smoking: [1.5, -1.5, -4, -8],
-  activity: [-2.5, 0, 2, 3.5],
-  sleep: [-2.5, -1, 0.5, 1.5],
-  stress: [1.5, 0, -2, -4],
+  smoking: [3, 1.5, -3.5, -10],
+  activity: [-2.5, 0, 2.5, 4.5],
+  sleep: [-3, -1, 1, 3.5],
+  stress: [1, 0, -2, -3.5],
 };
 
 const form = document.querySelector("#forecast-form");

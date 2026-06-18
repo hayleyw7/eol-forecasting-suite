@@ -1,0 +1,331 @@
+:root {
+  color-scheme: dark;
+  --bg: #111312;
+  --surface: #181b19;
+  --surface-2: #20241f;
+  --line: #3a4139;
+  --text: #f1f4ee;
+  --muted: #aab3a5;
+  --accent: #d2f36b;
+  --accent-2: #60d7c4;
+  --danger: #f07e67;
+  --shadow: rgba(0, 0, 0, 0.35);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background:
+    linear-gradient(rgba(17, 19, 18, 0.82), rgba(17, 19, 18, 0.94)),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240' viewBox='0 0 240 240'%3E%3Cg fill='none' stroke='%23313a34' stroke-width='1'%3E%3Cpath d='M0 40h240M0 80h240M0 120h240M0 160h240M0 200h240M40 0v240M80 0v240M120 0v240M160 0v240M200 0v240'/%3E%3C/g%3E%3Cg fill='%2360d7c4' fill-opacity='.16'%3E%3Ccircle cx='40' cy='40' r='2'/%3E%3Ccircle cx='120' cy='120' r='2'/%3E%3Ccircle cx='200' cy='80' r='2'/%3E%3Ccircle cx='80' cy='200' r='2'/%3E%3C/g%3E%3C/svg%3E");
+  color: var(--text);
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+.app-shell {
+  min-height: 100vh;
+  padding: clamp(18px, 4vw, 48px);
+}
+
+.workspace {
+  display: grid;
+  grid-template-columns: minmax(280px, 380px) minmax(360px, 1fr);
+  grid-template-rows: auto 1fr;
+  gap: 18px;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.intro {
+  grid-column: 1 / -1;
+  max-width: 760px;
+}
+
+.kicker {
+  margin: 0 0 8px;
+  color: var(--accent-2);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  margin-bottom: 8px;
+  font-size: clamp(2.2rem, 5vw, 5.1rem);
+  line-height: 0.96;
+  letter-spacing: 0;
+}
+
+.title-keep {
+  white-space: nowrap;
+}
+
+h2 {
+  margin-bottom: 0;
+  font-size: 1rem;
+}
+
+.intro-copy {
+  margin-bottom: 0;
+  max-width: 680px;
+  color: var(--muted);
+  font-size: 1.03rem;
+  line-height: 1.55;
+}
+
+.control-panel,
+.terminal-card {
+  border: 1px solid var(--line);
+  background: rgba(24, 27, 25, 0.92);
+  box-shadow: 0 18px 50px var(--shadow);
+}
+
+.control-panel {
+  display: grid;
+  gap: 14px;
+  padding: 18px;
+  border-radius: 8px;
+}
+
+.panel-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.icon-button {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--surface-2);
+  color: var(--text);
+  cursor: pointer;
+}
+
+.icon-button:hover {
+  border-color: var(--accent-2);
+  color: var(--accent-2);
+}
+
+.field,
+.slider-field {
+  display: grid;
+  gap: 8px;
+}
+
+.field > span,
+.slider-field span:first-child {
+  color: var(--muted);
+  font-size: 0.84rem;
+  font-weight: 750;
+}
+
+input,
+select {
+  width: 100%;
+  min-height: 42px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: #0f1110;
+  color: var(--text);
+  padding: 0 12px;
+}
+
+select {
+  appearance: none;
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23aab3a5' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E")
+      right 12px center / 16px 16px no-repeat,
+    #0f1110;
+  padding-right: 40px;
+}
+
+input:focus,
+select:focus {
+  outline: 2px solid rgba(96, 215, 196, 0.35);
+  outline-offset: 2px;
+}
+
+.segmented {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+}
+
+.segmented label {
+  cursor: pointer;
+}
+
+.segmented input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+.segmented span {
+  display: grid;
+  min-height: 38px;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--surface-2);
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-weight: 750;
+}
+
+.segmented input:checked + span {
+  border-color: var(--accent);
+  color: #111312;
+  background: var(--accent);
+}
+
+.slider-field > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+output {
+  color: var(--accent);
+  font-size: 0.85rem;
+  font-weight: 800;
+}
+
+input[type="range"] {
+  height: 28px;
+  min-height: 28px;
+  padding: 0;
+  accent-color: var(--accent);
+}
+
+.output-panel {
+  display: grid;
+  align-content: start;
+  gap: 14px;
+}
+
+.terminal-card {
+  overflow-x: auto;
+  justify-self: start;
+  width: fit-content;
+  max-width: 100%;
+  border-radius: 8px;
+  padding: clamp(14px, 2.5vw, 28px);
+  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+.terminal-text {
+  position: relative;
+  width: fit-content;
+  font-size: clamp(0.72rem, 1.8vw, 1rem);
+  line-height: 1.35;
+}
+
+.copy-button {
+  position: absolute;
+  top: calc(1.35em + 0.675em);
+  right: 1ch;
+  transform: translateY(-42%);
+  display: grid;
+  width: 1.85em;
+  min-height: 1.5em;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--surface-2);
+  color: var(--accent);
+  padding: 0;
+  font-family: inherit;
+  font-size: 0.95em;
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+  margin-right: 4.5px;
+}
+
+.copy-button:hover {
+  border-color: var(--accent-2);
+  color: var(--accent-2);
+}
+
+pre {
+  margin: 0;
+  color: var(--accent);
+  font-family: inherit;
+  font-size: inherit;
+  font-synthesis: none;
+  font-weight: 400;
+  line-height: inherit;
+  letter-spacing: 0;
+  white-space: pre;
+}
+
+.disclaimer {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.84rem;
+  line-height: 1.45;
+}
+
+@media (max-width: 820px) {
+  .app-shell {
+    padding: 16px;
+  }
+
+  .workspace {
+    grid-template-columns: 1fr;
+  }
+
+  h1 {
+    font-size: 2.45rem;
+  }
+
+  .terminal-card {
+    justify-self: stretch;
+    width: 100%;
+  }
+
+  .terminal-text {
+    width: fit-content;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 520px) {
+  h1 {
+    font-size: 2.15rem;
+  }
+
+  pre {
+    font-size: 0.62rem;
+  }
+}

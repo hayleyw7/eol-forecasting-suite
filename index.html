@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>End-of-Life Forecasting Suite</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="workspace" aria-labelledby="app-title">
+        <div class="intro">
+          <p class="kicker">Human Capital Management</p>
+          <h1 id="app-title">End-of-Life <span class="title-keep">Forecasting Suite™</span></h1>
+          <p class="intro-copy">
+            Enterprise lifecycle analytics for forecasting operational lifespan, capacity utilization, and end-of-service timelines across human biological assets.
+          </p>
+        </div>
+
+        <form id="forecast-form" class="control-panel">
+          <div class="panel-heading">
+            <h2>Inputs</h2>
+            <button class="icon-button" type="button" id="reset-button" aria-label="Reset form" title="Reset form">
+              ↺
+            </button>
+          </div>
+
+          <label class="field">
+            <span>Birthdate</span>
+            <input id="birthdate" name="birthdate" type="date" required />
+          </label>
+
+          <div class="field">
+            <span>Sex</span>
+            <div class="segmented" role="radiogroup" aria-label="Sex">
+              <label><input type="radio" name="sex" value="female" checked /> <span>Female</span></label>
+              <label><input type="radio" name="sex" value="male" /> <span>Male</span></label>
+              <label><input type="radio" name="sex" value="intersex" /> <span>Intersex</span></label>
+            </div>
+          </div>
+
+          <label class="field">
+            <span>Region</span>
+            <select id="region" name="region">
+              <option value="global" selected>Global average</option>
+              <option value="us">United States</option>
+              <option value="canada">Canada</option>
+              <option value="uk">United Kingdom</option>
+              <option value="western-europe">Western Europe</option>
+              <option value="eastern-europe">Eastern Europe</option>
+              <option value="east-asia">East Asia</option>
+              <option value="south-asia">South Asia</option>
+              <option value="latin-america">Latin America</option>
+              <option value="middle-east-north-africa">Middle East &amp; North Africa</option>
+              <option value="sub-saharan-africa">Sub-Saharan Africa</option>
+              <option value="oceania">Oceania</option>
+            </select>
+          </label>
+
+          <div class="slider-field">
+            <div>
+              <span>Smoking</span>
+              <output id="smoking-output" for="smoking">Never</output>
+            </div>
+            <input id="smoking" name="smoking" type="range" min="0" max="3" step="1" value="0" />
+          </div>
+
+          <div class="slider-field">
+            <div>
+              <span>Movement</span>
+              <output id="activity-output" for="activity">Moderate</output>
+            </div>
+            <input id="activity" name="activity" type="range" min="0" max="3" step="1" value="2" />
+          </div>
+
+          <div class="slider-field">
+            <div>
+              <span>Sleep</span>
+              <output id="sleep-output" for="sleep">Okay</output>
+            </div>
+            <input id="sleep" name="sleep" type="range" min="0" max="3" step="1" value="2" />
+          </div>
+
+          <div class="slider-field">
+            <div>
+              <span>Stress load</span>
+              <output id="stress-output" for="stress">Medium</output>
+            </div>
+            <input id="stress" name="stress" type="range" min="0" max="3" step="1" value="1" />
+          </div>
+
+        </form>
+
+        <section class="output-panel" aria-live="polite">
+          <div class="terminal-card">
+            <div class="terminal-text">
+              <pre id="forecast-output"></pre>
+              <button class="copy-button" type="button" id="copy-output" aria-label="Copy data" title="Copy data">⧉</button>
+            </div>
+          </div>
+          <p class="disclaimer">
+            For entertainment only. This is not a medical, actuarial, or financial prediction.
+          </p>
+        </section>
+      </section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

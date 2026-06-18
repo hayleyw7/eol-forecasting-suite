@@ -147,8 +147,12 @@ function update() {
   saveForm();
 }
 
+function formatCopiedOutput(text) {
+  return ["```", text, "```"].join("\n");
+}
+
 async function copyOutput() {
-  const text = output.textContent;
+  const text = formatCopiedOutput(output.textContent);
 
   try {
     if (navigator.clipboard && window.isSecureContext) {
